@@ -1,6 +1,6 @@
 <?php
 /**
-*process-index.html
+*process-index.php
 *FORM HANDLING-Form2
 *Patrick Saint-Louis, 2023
 */
@@ -10,13 +10,6 @@ if (isset($_POST['send'])) {
     //Assign the data collected from the the input field form name="fname"  
     $firstName = $_POST["fname"]; 
     $lastName = $_POST["lname"]; 
-
-    //Create a session to be able to save and share data via $_SESSION
-    session_start();
-    $_SESSION['user_fname']=$firstName;
-    $_SESSION['user_lname']=$lastName;
-    $_SESSION['error_firstname']='';
-    $_SESSION['error_lastname']='';
 
     //Assign the error messages related to the input fields
     $emptyMsg="Cannot be empty!";
