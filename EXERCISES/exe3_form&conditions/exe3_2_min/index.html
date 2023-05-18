@@ -1,0 +1,47 @@
+<!--index.html-->
+<!--EXERCISE 2 NUMBER 2 min-->
+<!--FORM-->
+<!--Patrick Saint-Louis, 2023-->
+
+<!DOCTYPE html>
+<html>  
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculateur</title>
+  </head>
+  <body>		
+        <!--Form--> 
+        <form method="post" action="process-index.php" > 
+            <fieldset>
+                <legend>Calculateur d'Achat</legend>
+                <p>Remplissez tous les champs</p>
+                
+                <!--Form fields to input data-->
+                <label for="article">Article</label><br/> 
+                <input id="article" type="text" name="article_name"/><br/>
+                
+                <label for="price">Prix Unitaire</label><br/>
+                <input id="price" type="number" min="0.01" step="0.01" name="unit_price" /><br/> 
+               
+                <label for="quantity">Quantité</label><br/>
+                <input id="quantity" type="number" min="0.01" step="0.01" name="article_quantity" /><br/><br/>
+
+                <!--Submit button to send form data-->		
+                <input type="submit" name="send" value="ENVOYER" />
+            </fieldset>
+        </form> 
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
