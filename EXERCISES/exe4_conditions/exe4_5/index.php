@@ -1,5 +1,11 @@
 <?php
-//exercise4b.php
+/**
+*index.php
+*EXERCISE 4 NUMBER 5
+*FORM 
+*Patrick Saint-Louis, 2023
+*/
+
 if (!isset($_POST['send'])) {
 echo <<<_END
 <!DOCTYPE html>
