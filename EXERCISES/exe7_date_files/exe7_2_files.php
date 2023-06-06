@@ -3,7 +3,6 @@
 /**
  *exe7_2_files.php
  *EXERCISE 7 NUMBER 2
- *FORM & FORM HANDLING
  *Patrick Saint-Louis, 2023
 */
 
