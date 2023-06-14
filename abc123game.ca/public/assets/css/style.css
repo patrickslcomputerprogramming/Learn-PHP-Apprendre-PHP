@@ -1,0 +1,94 @@
+/* Sign-In Form */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+    font-family: Verdana, sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  
+}
+
+.form-signin {
+  width: 50%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  text-align:center
+}
+
+#input1, #input2{
+    margin-bottom:10px;
+}
+
+.header-bar {
+    display: block;
+    min-height: auto;
+    width: 100%;
+    top:0;
+    background-color: #DDDD88;
+}
+
+.footer-bar {
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    height: auto;
+    background-color: #dddd88;
+    text-align:center;
+}
+
+.abc123{
+    font-family:blackjack;
+    font-size: 150%;
+    color: #ffffff; 
+}
+
+.game{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 150%;
+    color: #ffffff; 
+}
+
+.menu{
+  margin-left:2%;
+}
+
+p.form-err-msg{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 90%;
+    color:#ff0000;
+}
+
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+h1{
+    font-size:25px;
+}
