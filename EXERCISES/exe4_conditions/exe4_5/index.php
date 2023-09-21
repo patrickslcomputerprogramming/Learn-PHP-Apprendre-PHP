@@ -5,9 +5,8 @@
 *FORM 
 *Patrick Saint-Louis, 2023
 */
-
 if (!isset($_POST['send'])) {
-echo <<<_END
+?>
 <!DOCTYPE html>
 <html>  
   <head>
@@ -41,13 +40,14 @@ echo <<<_END
     </form> 
   </body>
 </html>
-_END;
-}
 
+<?php
+}
 //Form Handling
 //Go below only after a user pressed the input button name="send" 
 else {
-echo <<<_END
+?>
+
   <!DOCTYPE html>
   <html>  
   <head>
@@ -59,7 +59,8 @@ echo <<<_END
   <body>			
     <h1 class="redtext">You entered 3 triangle sides.<br/>Find your results below.</h1>
     <hr>
-  _END;
+
+  <?php
     //Assign the data collected from the form to variables
     $user_number1 = $_POST["userNbr1"]; 
     $user_number2 = $_POST["userNbr2"]; 
@@ -84,21 +85,11 @@ echo <<<_END
     echo "<img src='$name'>";
     //Back hyperlink
     echo '<br/><button><a href="index.php">ACCUEIL|HOME</a></button>';
-echo <<<_END
-  </body>
-</html>
-_END;
-} 
 ?>
 
+  </body>
+</html>
 
-
-
-
-
-
-
-
-
-
-
+<?php
+} 
+?>
