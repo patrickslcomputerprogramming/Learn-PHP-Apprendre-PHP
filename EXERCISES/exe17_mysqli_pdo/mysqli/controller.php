@@ -19,6 +19,9 @@
         <h1 class="blueText">Registration List</h1>
         <hr />
         <?php
+        //Activate exception 
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
         //Assign data collected from the form
         $theFirstName = $_POST['fname'];
         $theLastName = $_POST['lname'];
