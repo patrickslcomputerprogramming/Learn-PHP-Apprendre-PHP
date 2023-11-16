@@ -25,7 +25,7 @@ try {
     $connection->close();
 } catch (mysqli_sql_exception $error) {
     //If the disconnection failed, display error message and stop the script
-    die("Disconnection from MySQL failed!<br/>" . $connection->error);
+    die("Disconnection from MySQL failed!<br/>" . $error);
 }
 
 
@@ -66,7 +66,7 @@ try {
     $insertRecords = $connection->query($sqlCode);
 } catch (mysqli_sql_exception $error) {
     //If the insertion failed, display error message and stop the script
-    die("Data insertion into the Table failed!<br>" . $connection->error);
+    die("Data insertion into the Table failed!<br>" . $error);
 }
 
 //5-SELECT ALL THE EXISTING RECORDS INTO THE TABLE AND DISPLAY THEM
@@ -92,7 +92,7 @@ try {
     echo "</table>";
 } catch (mysqli_sql_exception $error) {
     //If the selection failed, display error message and stop the script
-    die("Data selection from the Table failed!<br/>" . $connection->error);
+    die("Data selection from the Table failed!<br/>" . $error);
 }
 
 //6-DISCONNECT FROM THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL
@@ -100,5 +100,5 @@ try {
     $disconnection = $connection->close();
 } catch (mysqli_sql_exception $error) {
     //If the disconnection failed, display error message and stop the script
-    die("Disconnection from MySQL failed!<br/>" . $connection->error);
+    die("Disconnection from MySQL failed!<br/>" . $error);
 }
