@@ -7,7 +7,7 @@
 //1-CONNECT TO THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL 
 try {
     $connection = new mysqli(HOSTNAME, USERNAME, PASSWORD);
-} catch (PDOException $error) {
+} catch (mysqli_sql_exception $error) {
     //If the connection failed, display error message and stop the script
     die("Connection to MySQL failed! <br>" . $error);
 }
@@ -15,7 +15,7 @@ try {
 //2-CREATE THE DATABASE STRUCTURE IF IT DOESN'T EXIST YET
 try {
     $createStructure = $connection->multi_query(file_get_contents("db_structure.sql"));
-} catch (PDOException $error) {
+} catch (mysqli_sql_exception $error) {
     //If the creation failed, display error message and stop the script
     die("Creation of Database and Tables failed! <br>" . $error);
 }
@@ -23,7 +23,7 @@ try {
 //3-DISCONNECT FROM THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL
 try {
     $connection->close();
-} catch (PDOException $error) {
+} catch (mysqli_sql_exception $error) {
     //If the disconnection failed, display error message and stop the script
     die("Disconnection from MySQL failed!<br/>" . $connection->error);
 }
