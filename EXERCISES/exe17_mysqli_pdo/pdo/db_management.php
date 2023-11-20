@@ -46,7 +46,7 @@ try {
 try {
     $sqlCode = "USE users";
     $connection->query($sqlCode);
-} catch (mysqli_sql_exception $error) {
+} catch (PDOException $error) {
     //If the selection failed, display error message and stop the script
     die("Connection to the Database failed!<br/> " . $error);
 }
@@ -55,7 +55,7 @@ try {
 try {
     $sqlCode = "DESC employees";
     $connection->query($sqlCode);
-} catch (mysqli_sql_exception $error) {
+} catch (PDOException $error) {
     //If the description failed, display error message and stop the script
     die("Description of the Table failed!<br/> " . $error);
 }
@@ -65,7 +65,7 @@ try {
     $sqlCode = "INSERT INTO employees (firstname, lastname, email) 
                 VALUES ('$theFirstName', '$theLastName', '$theEmail')";
     $connection->query($sqlCode);
-} catch (mysqli_sql_exception $error) {
+} catch (PDOException $error) {
     //If the insertion failed, display error message and stop the script
     die("Data insertion into the Table failed!<br>" . $error);
 }
@@ -86,7 +86,7 @@ try {
         echo "</tr>";
     }
     echo "</table>";
-} catch (mysqli_sql_exception $error) {
+} catch (PDOException $error) {
     //If the selection failed, display error message and stop the script
     die("Data selection from the Table failed!<br/>" . $error);
 }
@@ -94,7 +94,7 @@ try {
 //6-DISCONNECT FROM THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL
 try {
     unset($connection);
-} catch (mysqli_sql_exception $error) {
+} catch (PDOException $error) {
     //If the disconnection failed, display error message and stop the script
     die("Disconnection from MySQL failed!<br/>" . $error);
 }
