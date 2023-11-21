@@ -423,3 +423,14 @@
     echo CalcFactorial(1) . "<br/>";
     echo CalcFactorial(0) . "<br/>";
     echo CalcFactorial(3) . "<br/>";
+
+    //8-ANONYMOUS FUNCTION
+
+    //Create the function
+    $greetings = function($guessName) {
+        echo "Welcome ". $guessName;
+    };
+
+    //Call the function
+    $greetings(Patrick);
+
