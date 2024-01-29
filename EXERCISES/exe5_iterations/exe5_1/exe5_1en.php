@@ -18,7 +18,7 @@ if (!isset($_POST['send'])) {
     <form id="form1" method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>" > 
       <label>
         Digit or Number (1-10)<br />
-        <input type="number" name="userNbr" placeholder="digit or number" required> 
+        <input type="number" name="userNbr" placeholder="digit or number"> 
       </label>		
       <input id="submitbutton1" type="submit" name="send" value="SEND" />
     </form> 
@@ -49,7 +49,10 @@ else {
     $user_number = $_POST["userNbr"]; 
 
     //Validation
-    if ($user_number<1 || $user_number>10){
+    if (empty($user_number)){
+      echo"<p>Error! You submitted the form empty</p>";
+    }
+    elseif ($user_number<1 || $user_number>10){
       echo"<p>Error! You didn't enter a number between 1 to 10</p>";
     }
     else{
