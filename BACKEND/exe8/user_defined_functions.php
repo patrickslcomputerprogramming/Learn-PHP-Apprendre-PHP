@@ -19,7 +19,7 @@ function findIntSign($int) {
     else
         $result='negative';
     //Return output 
-    return $result;  
+    echo $result;  
 }
 
 //Test the function
