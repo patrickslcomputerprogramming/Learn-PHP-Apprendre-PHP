@@ -1,0 +1,76 @@
+<?php
+/**
+ *exe13_1_get_set_oop.php
+ *EXERCISE 13 NUMBER 1
+ *SCRIPT
+ *Patrick Saint-Louis, 2023
+*/
+
+//__set() and __get() SPECIAL METHODS
+//Declare a Class
+class Subscribers
+{
+    //Declare Properties
+    private $data = array();
+
+    //Declare a Special Method set
+    public function __set($dynamicPropertySet, $value)
+    {
+        $this->data[$dynamicPropertySet] = $value;
+    }
+
+    //Declare a Special Method get
+    public function __get($dynamicPropertyGet)
+    {
+        if (array_key_exists($dynamicPropertyGet, $this->data)) {
+            return "Your '$dynamicPropertyGet' is: " . $this->data[$dynamicPropertyGet];
+        }
+        else{
+            return"Sorry, you didn't register your '$dynamicPropertyGet' yet!";
+        }
+    }
+}
+
+//Instantiate an Object
+$currentUser = new Subscribers();
+
+//Create dynamic Properties and assign values
+$currentUser->firstName = "Jonathan";
+$currentUser->lastName = "David";
+
+//Invoke dynamic Properties  
+echo "<p>".$currentUser->firstName."</p>"; 
+echo "<p>".$currentUser->lastName."</p>"; 
+echo "<p>".$currentUser->phone."</p>"; 
+
+
+
+/*
+//exercise12b
+//__call() SPECIAL METHODS
+class Arithmetic
+{
+    private $x, $y, $z;
+    public function __construct($x, $y, $z)
+    {
+        $this->x = $x;
+        $this->y = $y;
+        $this->z = $z;
+    }
+    public function product()
+    {
+        return "$this->x x $this->y x $this->z = ".$this->x * $this->y * $this->z;
+    }
+    public function __call($name, $arguments)
+    {
+        return "<p>A Method with name: '$name' does not exist yet!</p>";
+    }
+}
+
+//Create an Object
+$test1 = new Arithmetic(1,2,3);
+//Invoke Methods
+echo $test1->product();
+echo $test1->sum();
+
+*/
