@@ -2,6 +2,7 @@
 
 //-----------------------------------------------------------------
 //-------- FEATURE 1: CREATE THE DATABASE AND TABLE STRUCTURE -----
+//-------- DATA DEFINITION ---
 //-----------------------------------------------------------------
 
 //1-CONNECT TO THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL 
@@ -20,6 +21,7 @@ try {
     die("Creation of Database and Tables failed! <br>" . $error);
 }
 
+
 //3-DISCONNECT FROM THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL
 try {
     $connection->close();
@@ -31,8 +33,9 @@ try {
 
 //-----------------------------------------------------------------
 //-------- FEATURE 2: INSERT 1 RECORD -----------------------------
-//-------- SELECT and DISPLAY ALL RECORD --------------------------
+//-------- DATA UPDATE --------------------------
 //-----------------------------------------------------------------
+
 
 //1-CONNECT TO THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL 
 try {
@@ -42,6 +45,7 @@ try {
     die("Connection to MySQL failed! <br>" . $error);
 }
 
+
 //2-SELECT THE DATABASE
 try {
     $selectDBUsers = mysqli_select_db($connection, "users");
@@ -49,6 +53,7 @@ try {
     //If the selection failed, display error message and stop the script
     die("Connection to the Database failed!<br/> " . $error);
 }
+
 
 //3-CHECK IF THE TABLE EXISTS 
 try {
@@ -69,7 +74,48 @@ try {
     die("Data insertion into the Table failed!<br>" . $error);
 }
 
-//5-SELECT ALL THE EXISTING RECORDS INTO THE TABLE AND DISPLAY THEM
+//5-DISCONNECT FROM THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL
+try {
+    $disconnection = $connection->close();
+} catch (mysqli_sql_exception $error) {
+    //If the disconnection failed, display error message and stop the script
+    die("Disconnection from MySQL failed!<br/>" . $error);
+}
+
+//-----------------------------------------------------------------
+//-------- FEATURE 3: SELECT ALL RECORDS ---------------
+//-------- DATA RETRIEVAL --------------------------
+//-------- DISPLAY THE RECORDS SELECTED --------------------------
+//-----------------------------------------------------------------
+
+//1-CONNECT TO THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL 
+try {
+    $connection = new mysqli(HOSTNAME, USERNAME, PASSWORD);
+} catch (mysqli_sql_exception $error) {
+    //If the connection failed, display error message and stop the script
+    die("Connection to MySQL failed! <br>" . $error);
+}
+
+
+//2-SELECT THE DATABASE
+try {
+    $selectDBUsers = mysqli_select_db($connection, "users");
+} catch (mysqli_sql_exception $error) {
+    //If the selection failed, display error message and stop the script
+    die("Connection to the Database failed!<br/> " . $error);
+}
+
+
+//3-CHECK IF THE TABLE EXISTS 
+try {
+    $sqlCode = "DESC employees";
+    $describeTable = $connection->query($sqlCode);
+} catch (mysqli_sql_exception $error) {
+    //If the description failed, display error message and stop the script
+    die("Description of the Table failed!<br/> " . $error);
+}
+
+//4-SELECT ALL THE EXISTING RECORDS INTO THE TABLE AND DISPLAY THEM
 try {
     $sqlCode = "SELECT * FROM employees";
     $selectRecords = $connection->query($sqlCode);
@@ -95,7 +141,7 @@ try {
     die("Data selection from the Table failed!<br/>" . $error);
 }
 
-//6-DISCONNECT FROM THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL
+//5-DISCONNECT FROM THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL
 try {
     $disconnection = $connection->close();
 } catch (mysqli_sql_exception $error) {
