@@ -12,6 +12,7 @@ define('PASSWORD', '');
 $connection = new mysqli(HOSTNAME, USERNAME, PASSWORD);
 //2-CREATE THE DATABASE STRUCTURE IF IT DOESN'T EXIST YET
 $createStructure = $connection->multi_query(file_get_contents("final_project_demonst.sql"));
+echo "The database, tables, and view stuctures were successfully created.";
 //3-DISCONNECT FROM THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL
 $connection->close();
 
@@ -29,6 +30,7 @@ $describeTable = $connection->query($sqlCode);
 $sqlCode = "INSERT INTO player(fName, lName, userName, registrationTime)
 VALUES('Patrick','Saint-Louis', 'sonic12345', now()); ";
 $insertRecords = $connection->query($sqlCode);
+echo "A new row was successfully recorded into the table kidsGames.";
 //5-DISCONNECT FROM THE DATABASE MANAGEMENT SYSTEM (DBMS) MYSQL
 $connection->close();
 
@@ -48,6 +50,7 @@ $sqlCode = "SELECT * FROM player";
     //Calculate the number of records (or rows) available
     $number_of_rows = $selectRecords->num_rows;
     //Use a loop to display the records one by one in a HTML table
+    echo "</p>Find below all the rows currently recorded into the table kidsGames.</p>";
     for ($j = 0; $j < $number_of_rows; ++$j) {
         //Assign the records of each row to an associative array
         $each_row = $selectRecords->fetch_array(MYSQLI_ASSOC);
