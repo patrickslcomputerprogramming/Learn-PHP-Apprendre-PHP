@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="xxxx" />
+    <title>AJAX Practice</title>
+    <style>
+        #error_msg {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Form with DOM event control-->
+    <!--The user-defined function to call is defined here-->
+    <form method="" action="">
+        <fieldset>
+            <legend>VALIDATION</legend>
+
+            <label for="i1">*Name</label>
+            <input type="text" id="i1" name="fnam" onkeyup="validateInput()" />
+            <p id="error_msg"></p>
+
+            <input type="submit" id="sbmitBtn" value="SUBMIT" />
+        </fieldset>
+    </form>
+
+    <script>
+
+        //AJAX Function Using GET 
+        function validateInput() {
+            //Receive data from the input
+            data = document.getElementById("i1").value
+            
+            //Create the object of XMLHttpRequest()
+            var xmlhttp = compatibleXMLHttpRequest();
+            //Send the request to the server (the information to the PHP file)
+            xmlhttp.open("GET", "process.php?text-written-onkeyup=" + data, true);
+            xmlhttp.send();
+            //Receive the response from the server (the information from the PHP file)
+            xmlhttp.onreadystatechange = function () {
+                //If the status of the request is completed (4) 
+                //And the action requested was received, understood, accepted, and processed successfully by the server (200)
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("error_msg").innerHTML = this.responseText;
+                }
+                else {
+                    alert="No data received from the PHP file"
+                    document.getElementById("error_msg").innerHTML = alert;
+                }
+            };
+        }
+
+        //Function to create compatible Ajax Request with the most popular browsers
+        function compatibleXMLHttpRequest() {
+            try {
+                // Non Internet Explorer Browser? like Safari, Chrome, Opera
+                // Successful request
+                var request = new XMLHttpRequest();
+            } catch (
+            e1 //Failed request
+            ) {
+                try {
+                    // Internet Explorer 6+?
+                    // Successful request
+                    request = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (
+                e2 //Failed request
+                ) {
+                    try {
+                        // Internet Explorer 5?
+                        // Successful request
+                        request = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (
+                    e3 // There is no asynchronous support
+                    ) {
+                        request = false;
+                    }
+                }
+            }
+            return request;
+        }
+
+    </script>
+
+</body>
+
+</html>
