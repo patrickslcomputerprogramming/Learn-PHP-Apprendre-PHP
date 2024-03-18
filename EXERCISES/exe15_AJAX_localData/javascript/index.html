@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="xxxx" />
+    <title>AJAX Practice</title>
+    <style>
+        #error_msg{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Form with DOM event control-->
+    <!--The user-defined function to call is defined here-->
+    <form method="" action="">
+        <fieldset>
+            <legend>VALIDATION</legend>
+
+            <label for="i1">*Name</label>
+            <input type="text" id="i1" name="fnam" onkeyup="validateInput()"/>
+            <p id="error_msg"></p>
+
+            <input type="submit" id="sbmitBtn" value="SUBMIT"/>
+        </fieldset>
+    </form>
+
+    <script>
+        function validateInput(){
+            //Receive data from the input
+            data = document.getElementById("i1").value
+            //Convert data to lowercase letters
+            data = data.toLowerCase()
+            //Declare variables
+            warn_msg="Must start with a letter [a-z]"
+            no_warn_msg="On a good way!"
+            //Compare data to display output
+            //If first character of data is empty or includes a-z display no_warm_msg
+            //If first character of data is different than a-z display warm_msg
+            if (data=="" || (/[a-z]/.test(data[0]))){
+                document.getElementById("error_msg").innerHTML=no_warn_msg
+            }else{
+                document.getElementById("error_msg").innerHTML=warn_msg
+            } 
+        }
+    </script>
+
+</body>
+
+</html>
