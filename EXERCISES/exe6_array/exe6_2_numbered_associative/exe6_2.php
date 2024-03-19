@@ -108,11 +108,11 @@ _END;
   
     echo  '<a href='.$_SERVER['SCRIPT_NAME'].'>Try again!</a>'; 
 
-echo <<<_END
-        
+?>
     </body>
   </html>
-_END;
+
+<?php
 
     }
 ?>
