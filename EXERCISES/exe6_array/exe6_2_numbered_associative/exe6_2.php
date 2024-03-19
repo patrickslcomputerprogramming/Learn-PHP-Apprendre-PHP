@@ -106,8 +106,10 @@ _END;
         echo "<p>". $messages['errTxt'] . "</p>";
     }
   
+    echo  '<a href='.$_SERVER['SCRIPT_NAME'].'>Try again!</a>'; 
+
 echo <<<_END
-        <a href="exe6_2.php">Try again!</a>
+        
     </body>
   </html>
 _END;
