@@ -30,16 +30,45 @@ try {
 //Or create the DB if it doesn't exist yet 
 //2-Selectionner la DB si elle existe
 //Ou creer la DB si elle n'exite pas encore
-$sqlCode = "USE $dbname";
 try {
+    $sqlCode = "USE $dbname";
     $connection->query($sqlCode);
 } catch (mysqli_sql_exception) {
     //Hope the creation will work successfully, no error handling is conducted
     //Conduct error handling to make sure there's no error
     $connection->multi_query(file_get_contents("createDBStructureInsert.sql")); 
-    $connection->query($sqlCode);
 }
 
+//3-DisConnect from the DBMS MySQL
+//3-Se deconnecter du SGBD MySQL
+try {
+    $connection->close();
+} catch (mysqli_sql_exception $errorMysqli) {
+    $errorMsg = "Something went wrong" . $errorMysqli;
+}
+
+// --------------------------------------------------
+
+//1-Connect to the DBMS MySQL
+//1-Se connecter au SGBD MySQL
+try {
+    $connection = new mysqli(HOST, USER, PASS);
+} catch (mysqli_sql_exception $errorMysqli) {
+    $errorMsg = "Something went wrong" . $errorMysqli;
+}
+
+//2-Select the DB when it already exists
+//Or create the DB if it doesn't exist yet 
+//2-Selectionner la DB si elle existe
+//Ou creer la DB si elle n'exite pas encore
+try {
+    $sqlCode = "USE $dbname";
+    $connection->query($sqlCode);
+} catch (mysqli_sql_exception) {
+    //Hope the creation will work successfully, no error handling is conducted
+    //Conduct error handling to make sure there's no error
+   $errorMsg = "Something went wrong" . $errorMysqli; 
+}
 
 //3-Select all columns of the TABLE regions
 //3-Sélectionner toutes les colonnes de la TABLE regions
