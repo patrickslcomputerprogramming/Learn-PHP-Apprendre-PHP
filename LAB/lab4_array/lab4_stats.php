@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="Patrick Saint-Louis" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Mean-Median-Mode</title>
     </head>
     <body>
