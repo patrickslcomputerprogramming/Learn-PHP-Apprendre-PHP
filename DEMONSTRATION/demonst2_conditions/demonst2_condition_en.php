@@ -77,7 +77,20 @@
         	echo "You didn't enter a correct value.<br />";
 	}
 
+    /* 
+    MATCH statement 
+    What is the difference between a match and a switch?
+    */
+    // Variable assignment
+    $user_number='negative';
+    output_value = match ($user_number) {
+	    'positive'=>'Number greater than 0.',
+	    'negative'=>'Number lower than 0.',
+	    'zero'=>'Number equal to 0.'
+    };
 
+    echo $user_number;
+   
     /*
        COMBINED OPTIONS with &&
        All conditions between && must be true
