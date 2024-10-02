@@ -36,16 +36,15 @@
             // convert characters to upper
             $capitalUniqCharsText = strtoupper($uniqCharsText);
 
-            $i = 1;
-            echo "<p>Initial text: $initialText</p>";
-            echo "<p>Total number of letters: $initialTextSize</p>";
-            echo "Number of distinct letters: $uniqCharsTextSize</p>";
-            echo "Distint letters shown as HTML list elements:</p>";
+            
+            echo "<p>Initial text:". $initialText. "</p>";
+            echo "<p>Total number of letters:". $initialTextSize . "</p>";
+            echo "<p>Number of distinct letters:" . $uniqCharsTextSize . "</p>";
+            echo "<p>Distint letters shown as HTML list elements:</p>";
 
             echo "<ul>";
             for ($x = 0; $x < $uniqCharsTextSize; $x++) {
-                echo "<li>Lettre $i : $capitalUniqCharsText[$x]</li>";
-                $i++;
+                echo "<li>Letter # ". $x+1 . " : ". $capitalUniqCharsText[$x] . "</li>";
             }
             echo "</ul>";
         }
