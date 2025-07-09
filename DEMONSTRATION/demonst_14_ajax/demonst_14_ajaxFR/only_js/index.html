@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Régions Administratives Québec</title>
+    <script type="text/javascript" src="main.js"></script>
+    <style> #txtHint{color: red} </style>
+</head>
+
+<body>
+    <h1>Entrez une lettre ou un mot pour afficher <br>les noms de régions administratives du Québec<br> qui commencent par lui.</h1>
+    <form action="">
+        <label for="regionName">Lettre ou Mot:</label>
+        <input type="text" id="regionName" name="iRegionName" onkeyup="showHint(this.value)">
+    </form>
+    <p>Noms de régions correspondants: <span id="txtHint"></span></p>
+</body>
+
+</html>
