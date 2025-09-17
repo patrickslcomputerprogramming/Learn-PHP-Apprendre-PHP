@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Purchase</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>Record a purchase</h1>
+  <!--Form-->
+  <form id="form1" method="post" action="calculate-invoice.php">
+    <!--Form fields to input data-->
+    <p>
+      <label for="input-article">Article</label>
+      <input id="input-article" type="text" name="article" required>
+    </p>
+    <p>
+      <label for="input-unitprice">Unit Price</label>
+      <input id="input-unitprice" type="number" name="unitprice" min="0.01" step="0.01" required>
+    </p>
+    <p>
+      <label for="input-quantity">Quantity</label>
+      <input id="input-quantity" type="number" name="quantity" min="0.01" step="0.01" required>
+    </p>
+    <!--Submit button to send form data-->
+    <input id="submitform1" type="submit" name="submit-button" value="CALCULATE" />
+  </form>
+</body>
+
+</html>
