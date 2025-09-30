@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Collecte de données</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <h1>Enter your time zone to display its corresponding date and time</h1>
+    <!--1-Collect input data-->
+    <form method="post" action="afficher_date_heure.php">
+
+        <label for="continent">Continent:</label>
+        <select id="continent" name="user-continent" required />
+        <option></option>
+        <option>Africa</option>
+        <option>America</option>
+        <option>Antarctica</option>
+        <option>Arctic</option>
+        <option>Asia</option>
+        <option>Atlantic</option>
+        <option>Australia</option>
+        <option>Europe</option>
+        <option>Indian</option>
+        <option>Pacific</option>
+        </select>
+
+        <label for="city">City:</label>
+        <input id="city" type="text" name="user-city" required />
+
+        <input type="submit" name="send-button" value="ENVOYER" />
+
+    </form>
+</body>
+</html>
