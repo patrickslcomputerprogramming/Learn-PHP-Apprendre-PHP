@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Collect data</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <h1>Create a new file and add its content</h1>
+    <!--1-Collect input data-->
+    <form method="post" action="creer_fichier_texte.php">
+        <p><label for="emplacement">File Path:</label></p>
+        <p><input id="emplacement" type="text" name="ipt-location-fichier" placeholder="C:/wamp64/www/dw3" required /></p>
+
+        <p><label for="nom">File Name:</label></p>
+        <p><input id="nom" type="text" name="ipt-nom-fichier" placeholder="memo-patrick.txt" required /></p>
+        
+        <p><label for="text">Text to be added in the file:</label>
+        <p><textarea id="text" name="txt-text-fichier" required /></textarea></p>
+
+        <p><input type="submit" name="ipt-envoyer" value="ENVOYER" /></p>
+    </form>
+</body>
+</html>
