@@ -2,6 +2,7 @@
 if (isset($_POST["btn_soumettre"])) {
     //Accessible Si le fichier est accédé après la soumission du formulaire
     //Enregistrer les données soumises dans le formulaire
+    //Save form data
     $fname = $_POST['prenom'];
     $lname = $_POST['nom'];
     $birthyear = $_POST['naissance'];
@@ -10,8 +11,10 @@ if (isset($_POST["btn_soumettre"])) {
     require "Utilisateur.php";
 
     //Créer une occurence (objet) de la classe
+    //Create an object (a class occurence)
     $personne = new Utilisateur ($fname, $lname, $birthyear);
-    //Instancier une méthode pour stocker les donnees calculees    
+    //Instancier une méthode pour stocker les donnees calculees
+    //Instantiate or call a method
     $profil = $personne->calculerProfil();
 ?>
 
@@ -19,7 +22,7 @@ if (isset($_POST["btn_soumettre"])) {
 <html>
 
 <head>
-    <title>Réponse</title>
+    <title>Réponse|Response</title>
     <meta charset="UTF-8">
     <style>
       .bluetext {
@@ -29,7 +32,7 @@ if (isset($_POST["btn_soumettre"])) {
 </head>
 
 <body>
-    <h1 class="bluetext">Profil de l'utilisateur créé</h1>
+    <h1 class="bluetext">Profil de l'utilisateur créé|User Profiel created</h1>
     <?php
     //Afficher les résultats
     foreach( $profil as $key => $value ) {
@@ -38,7 +41,7 @@ if (isset($_POST["btn_soumettre"])) {
     ?>
 
     <!--Lien de retour à la page d'accueil -->
-    <button><a href="index.html">FORMULAIRE</a></button>
+    <button><a href="index.html">FORMULAIRE|FORM</a></button>
 </body>
 </html>
 
@@ -46,6 +49,8 @@ if (isset($_POST["btn_soumettre"])) {
 } else {
     //Accessible si le fichier est accédé avant la soumission du formulaire
     //Rediriger à la page d'accueil
+    //Redirect to the home page
     header('Location: index.html'); 
 }
 ?>
+
