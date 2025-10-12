@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Collecte de données|Collect data</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <h2>Saisissez votre fuseau horaire pour afficher la date et l'heure</h2>
+    <h2>Write your TimeZone to display the corresponding date and time</h2>
+    <!--1-Collect input data-->
+    <form method="post" action="afficher_date_heure.php">
+
+        <label for="continent">Continent:</label>
+        <select id="continent" name="user-continent" required />
+        <option></option>
+        <option value="Africa">Africa|Afrique</option>
+        <option value="America">America|Amérique</option>
+        <option value="Antarctica">Antarctica|Antartique</option>
+        <option value="Arctic">Arctic|Artique</option>
+        <option value="Asia">Asia|Asie</option>
+        <option value="Atlantic">Atlantic|Atlantique</option>
+        <option value="Australia">Australia</option>
+        <option value="Europe">Europe</option>
+        <option value="Indian">Indian|Indien</option>
+        <option value="Pacific">Pacific|Pacifique</option>
+        </select>
+
+        <label for="city">Ville|City:</label>
+        <input id="city" type="text" name="user-city" required />
+
+        <input type="submit" name="send-button" value="ENVOYER" />
+
+    </form>
+</body>
+</html>
