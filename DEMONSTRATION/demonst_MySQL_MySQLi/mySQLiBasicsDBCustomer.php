@@ -28,7 +28,7 @@ try {
     $connection->query($sql_code);
     
     //6-Insert data into the TABLE student
-    $sql_code = "INSERT INTO studentt (firstname, lastname)
+    $sql_code = "INSERT INTO student (firstname, lastname)
         VALUES ('Patrick', 'Saint-Louis')";
     $connection->query($sql_code);
     
