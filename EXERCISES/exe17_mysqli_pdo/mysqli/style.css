@@ -12,6 +12,7 @@
 
 #back {
     width: inherit;
+    margin-top: 15px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -54,4 +55,5 @@ table {
 h1 {
     font-size: 100%;
     text-align: center;
+
 }
