@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab3-Exe1-Calculateur de Prix</title>
+</head>
+<style>
+  body {
+    width: 50%;
+    border-radius: 6px;
+    margin: 5px auto 5px auto;
+    padding: 2% 2% 2% 2%;
+    border: 1px solid black;
+    text-align: center;
+  }
+</style>
+
+<body>
+  <!--Formulaire Form1-->
+  <form id="form1" method="post" action="calculer-prix-form1.php">
+    <fieldset>
+      <p>
+        <legend>Calculer votre achat</legend>
+      <p>Remplissez tous les champs</p>
+
+      <!--Champs pour rentrer les données-->
+      <p><label for="article">Article</label></p>
+      <p></p><input id="article" type="text" name="nom_article_form1" /></p>
+
+      <p></p><label for="price">Prix Unitaire</label></p>
+      <p></p><input id="price" type="number" min="0.01" step="0.01" name="prix_unitaire_form1" /></p>
+
+      <p></p><label for="quantity">Quantité</label></p>
+      <p></p><input id="quantity" type="number" min="0.01" step="0.01" name="quantite_article_form1" /></p>
+
+      <!--Boutton pour soumettre-->
+      <input type="submit" name="bouton_soumettre_form1" value="CALCULER" />
+    </fieldset>
+  </form>
+</body>
+
+</html>
