@@ -1,0 +1,97 @@
+/**
+*demonstration class14.php
+*/
+
+.blueText {
+    color: blue;
+}
+
+.redText {
+    color: red;
+}
+
+#back {
+    width: inherit;
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container {
+    width: 70%;
+    border-radius: 6px;
+    margin: 5px auto 5px auto;
+    border: 2px solid black;
+    padding: 2% 2% 2% 2%;
+    text-align: center;
+    overflow: auto;
+}
+
+table {
+    margin: 1px auto 1px auto;
+}
+
+tr.submit:nth-of-type(4)>td:nth-child(1),
+tr.submit:nth-of-type(4)>td:nth-child(2){
+    border: none !important;
+}
+
+th,
+td,
+tr.result>td{
+    border: 1px solid #000000 !important;
+    text-align: left;
+}
+
+form,
+table {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#submit1 {
+    margin-left: 28%;
+}
+
+h1 {
+    font-size: 100%;
+    text-align: center;
+}
+
+/* Garder le tableau  dans le container même en zoomant */
+.container table {
+    width: 100%;
+    border-collapse: collapse;
+    word-wrap: break-word;
+    table-layout: fixed;
+}
+
+.container td, .container th {
+    word-break: break-word;
+    padding: 8px;
+}
+
+th label {
+    text-align: right !important;
+}
+
+/* Garder les champs dans le tableau même en zoomant */
+.container input[type="text"],
+.container input[type="email"]  {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.container input[type="submit"]{
+    width: 70%;
+    max-width: 70%;
+    box-sizing: border-box;
+    font-size: 50%;
+    padding : 0 1px 0 1px;
+}
+
+.container form {
+    width: 100%;
+    overflow-x: auto;
+}
