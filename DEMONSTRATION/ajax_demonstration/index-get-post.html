@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Opérations-ajax</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="main_post.js"></script>
+    <!--<script type="text/javascript" src="main_get.js"></script>-->
+    <style>
+        * {
+            font-family: Tahoma, Verdana, Geneva;
+            color: #000000;
+            font-size: 14px;
+        }
+
+        .container {
+            width: 50%;
+            border-radius: 6px;
+            margin: 5px auto 5px auto;
+            border: 2px solid black;
+            padding: 2% 2% 2% 2%;
+            text-align: center;
+            overflow: auto;
+        }
+
+        input {
+            display:block;
+            text-align: center;
+            margin: 15px auto 5px auto;
+            font-size: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        #input-get-int-type{
+            color: red;
+            border: none;
+            width: 100%;
+            max-width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Ecrivez un nombre entier, puis cliquez en dessous pour afficher son type</h1>
+        <form>
+                    <input id="input-set-int" type="number">
+                    <input id="input-get-int-type" readonly onclick="get_int_type()">
+        </form>
+    </div>
+</body>
+
+</html>

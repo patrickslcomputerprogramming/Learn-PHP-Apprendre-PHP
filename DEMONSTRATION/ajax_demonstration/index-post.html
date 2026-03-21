@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Opérations-ajax</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            font-family: Tahoma, Verdana, Geneva;
+            color: #000000;
+            font-size: 14px;
+        }
+
+        .container {
+            width: 50%;
+            border-radius: 6px;
+            margin: 5px auto 5px auto;
+            border: 2px solid black;
+            padding: 2% 2% 2% 2%;
+            text-align: center;
+            overflow: auto;
+        }
+
+        input {
+            display:block;
+            text-align: center;
+            margin: 15px auto 5px auto;
+            font-size: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        #input-get-int-type{
+            color: red;
+            border: none;
+            width: 100%;
+            max-width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Ecrivez un nombre entier, puis cliquez en dessous pour afficher son type</h1>
+        <form>
+                    <input id="input-set-int" type="number">
+                    <input id="input-get-int-type" readonly onclick="get_int_type()">
+        </form>
+    </div>
+
+    <script> 
+        //Fonction JavaScript et XML asynchrones (AJAX)
+        //Pour envoyer des données à et recevoir des données de PHP 
+        function get_int_type() {
+            //Stocker les données contenue dans le champ <input id="input-set-int"
+            var user_int = document.getElementById("input-set-int").value;
+            //Conditions   
+            if (user_int.length == 0) {
+                //A-Si user_int est vide, sortir de la fonction
+                return;
+            }
+            else {
+                //B-Si user_int n'est pas vide effectuer une communication asynchrone 
+                //1-Créer un objet de la classe XMLHTTPRequest()
+                var xmlhttp = new XMLHttpRequest();
+
+                //2-Envoyer user_int au fichier "calculate_int_type.php" (requête) 
+                xmlhttp.open("POST", "calculate_int_type.php", true);
+                xmlhttp.setRequestHeader(
+                    "Content-type",
+                    "application/x-www-form-urlencoded"
+                );
+                let data = "user_data=" + user_int;
+                xmlhttp.send(data);
+
+                //3-Recevoir des données du fichier "calculate_int_type.php" (réponse)
+                xmlhttp.onreadystatechange = function () {
+                    //Conditions
+                    if (this.readyState == 4 && this.status == 200) {
+                        //Si statut de la requête est complété : readyState = 4
+                        //Et la connexion a réussi : Code de statut HTTP retourné = 200
+                        //Conditions
+                        if (this.responseText.length != 0){
+                            //Si la réponse reçue n'est pas vide, afficher les données reçues
+                            document.getElementById("input-get-int-type").value= this.responseText;
+                        }
+                        else{
+                            //Si la réponse reçue est vide, afficher un message d'erreur
+                            var msg_err = "Un problème est survenu.Réessayez plus tard!";
+                            document.getElementById("input-get-int-type").value = msg_err;
+                        }
+                    }
+                };
+            }
+        }
+        
+    </script>
+
+</body>
+
+</html>
