@@ -31,8 +31,10 @@
 
         //Charger le contenu des fonctions définies par l'utilisateur pour interagir avec MySQL
         //Sélectionner le fichier PDO ou le fichier MySQLi
-        require_once "db_management_pdo.php";
+        //require_once "db_management_pdo.php";
         //require_once "db_management_mysqli.php";
+          require_once "db_management_mysqli_fonctions.php";
+        //require_once "db_management_pdo_fonctions.php";
 
         ?>
         <div id="back">
