@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Régions Administratives Québec</title>
+    <!--Commentez ci-dessous pour utiliser get ou post-->
+    <script type="text/javascript" src="main-get.js"></script>
+    <!--<script type="text/javascript" src="main_post.js"></script>-->
+    <style>
+        #reponse-ajax {
+            color: red
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Entrez une ou plusieurs lettres pour afficher <br>les noms de régions administratives du Québec<br> qui commencent par elle(s).</h1>
+    <form action="">
+        <label for="nom_region_qc">Lettre ou Mot:</label>
+        <input type="text" id="nom_region_qc" name="ipt_nom_region_qc" onkeyup=" chercherRegionQuebec()">
+    </form>
+    <p>Noms de régions correspondants: <span id="reponse-ajax"></span></p>
+</body>
+
+</html>
